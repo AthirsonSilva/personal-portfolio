@@ -1,4 +1,5 @@
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
+import TrackVisibility from 'react-on-screen'
 import colorSharp2 from '../assets/img/color-sharp2.png'
 import { ProjectCard } from './ProjectCard'
 import {
@@ -13,12 +14,24 @@ export const Projects = () => {
 			<Container>
 				<Row>
 					<Col>
-						<h2>Projects</h2>
-						<p>
-							This is a list of projects I have worked on. I have
-							worked on many projects, but these are the ones I am
-							most proud of.
-						</p>
+						<TrackVisibility>
+							{({ isVisible }) => (
+								<div
+									className={
+										isVisible
+											? 'animated_animated animate__fadeIn'
+											: ''
+									}
+								>
+									<h2>Projects</h2>
+									<p>
+										This is a list of projects I have worked
+										on. I have worked on many projects, but
+										these are the ones I am most proud of.
+									</p>
+								</div>
+							)}
+						</TrackVisibility>
 						<Tab.Container
 							id='projects-tabs'
 							defaultActiveKey='first'

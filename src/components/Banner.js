@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons'
+import TrackVisibility from 'react-on-screen'
 import headerImg from '../assets/img/header-img.svg'
 
 export const Banner = () => {
@@ -53,31 +54,48 @@ export const Banner = () => {
 			<Container>
 				<Row className='align-items-center'>
 					<Col xs={12} md={6} xl={7}>
-						<span className='tagline'>Welcome to my Portfolio</span>
-						<h1>
-							{`Hi i'm Athirson`}
-							<br />
-							<span
-								style={{
-									fontSize: '2.5rem',
-									fontStyle: 'italic',
-									fontWeight: 'normal'
-								}}
-								className='wrap'
-							>
-								{headerText}
-							</span>
-						</h1>
-						<p>
-							I'm a Fullstack Developer, Mobile Developer and Data
-							Scientist. I love to build things that live on the
-							internet, from websites to apps, or anything in
-							between. My goal is to always build products that
-							provide pixel-perfect, performant experiences.
-						</p>
-						<button onClick={() => console.log('a')}>
-							Let's connect <ArrowRightCircle size={25} />
-						</button>
+						<TrackVisibility>
+							{({ isVisible }) => (
+								<div
+									className={
+										isVisible
+											? 'animated_animated animate__fadeIn'
+											: ''
+									}
+								>
+									<span className='tagline'>
+										Welcome to my Portfolio
+									</span>
+									<h1>
+										{`Hi i'm Athirson`}
+										<br />
+										<span
+											style={{
+												fontSize: '2.5rem',
+												fontStyle: 'italic',
+												fontWeight: 'normal'
+											}}
+											className='wrap'
+										>
+											{headerText}
+										</span>
+									</h1>
+									<p>
+										I'm a Fullstack Developer, Mobile
+										Developer and Data Scientist. I love to
+										build things that live on the internet,
+										from websites to apps, or anything in
+										between. My goal is to always build
+										products that provide pixel-perfect,
+										performant experiences.
+									</p>
+									<button onClick={() => console.log('a')}>
+										Let's connect{' '}
+										<ArrowRightCircle size={25} />
+									</button>
+								</div>
+							)}
+						</TrackVisibility>
 					</Col>
 					<Col xs={12} md={6} xl={5}>
 						<img src={headerImg} alt='Header'></img>
