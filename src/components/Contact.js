@@ -1,3 +1,5 @@
+import * as EmailValidator from 'email-validator'
+import { phone } from 'phone'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
@@ -12,9 +14,94 @@ export const Contact = () => {
 		phone: ''
 	}
 
+	const validatePhone = () => {
+		const userPhone = phone(formDetails.phone)
+
+		if (!userPhone.isValid) {
+			return false
+		}
+
+		return true
+	}
+
+	const validateEmail = () => {
+		if (!EmailValidator.validate(formDetails.email)) {
+			return false
+		}
+
+		return true
+	}
+
+	const validateNames = () => {
+		if (
+			formDetails.firstName.length < 2 ||
+			formDetails.lastName.length > 20
+		) {
+			return false
+		} else if (
+			formDetails.lastName.length < 2 ||
+			formDetails.lastName.length > 20
+		) {
+			return false
+		}
+
+		return true
+	}
+
+	const validateMessage = () => {
+		if (
+			formDetails.message.length < 10 ||
+			formDetails.message.length > 500
+		) {
+			return false
+		}
+
+		return true
+	}
+
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setButtonText('Sending...')
+
+		if (!validateEmail()) {
+			setStatus({
+				success: false,
+				message: 'Please enter a valid phone number'
+			})
+
+			setButtonText('Send Message Again')
+			return false
+		}
+
+		if (!validatePhone()) {
+			setStatus({
+				success: false,
+				message: 'Please enter a valid phone number'
+			})
+
+			setButtonText('Send Message Again')
+			return false
+		}
+
+		if (!validateNames()) {
+			setStatus({
+				success: false,
+				message: 'The message must be between 10 and 500 characters!'
+			})
+
+			setButtonText('Send Message Again')
+			return false
+		}
+
+		if (!validateMessage()) {
+			setStatus({
+				success: false,
+				message: 'The message must be between 10 and 500 characters!'
+			})
+
+			setButtonText('Send Message Again')
+			return false
+		}
 
 		let response = await fetch(
 			'https://prtfolio-mailer.herokuapp.com/contact',
@@ -30,9 +117,9 @@ export const Contact = () => {
 		setButtonText('Send Message')
 
 		let result = await response.json()
-		setFormDetails(formInitialDetails)
 
 		if (result.code === 200) {
+			setFormDetails(formInitialDetails)
 			setStatus({
 				success: true,
 				message: 'Message Sent Successfully!'
@@ -102,6 +189,7 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													required
 												/>
 											</Col>
 											<Col
@@ -119,6 +207,7 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													required
 												/>
 											</Col>
 											<Col
@@ -136,6 +225,7 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													required
 												/>
 											</Col>
 											<Col
@@ -153,6 +243,7 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													required
 												/>
 											</Col>
 											<Col>
@@ -166,24 +257,27 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													required
 												></textarea>
 												<button type='submit'>
 													<span>{buttonText}</span>
 												</button>
 											</Col>
 											{status.message && (
-												<Col>
-													<p
-														className={
-															status.success ===
-															true
-																? 'success'
-																: 'danger'
-														}
-													>
-														{status.message}
-													</p>
-												</Col>
+												<p
+													className={
+														status.success === true
+															? 'success'
+															: 'danger'
+													}
+													style={{
+														marginTop: '1.2rem',
+														fontWeight: 'bolder',
+														fontSize: '1.6rem'
+													}}
+												>
+													{status.message}
+												</p>
 											)}
 										</Row>
 									</form>
