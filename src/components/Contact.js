@@ -16,10 +16,10 @@ export const Contact = () => {
 		e.preventDefault()
 		setButtonText('Sending...')
 
-		let response = await fetch('https://localhost:5000/contact', {
+		let response = await fetch('https://prtfolio-mailer.herokuapp.com', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
+				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(formDetails)
 		})
