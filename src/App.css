@@ -625,3 +625,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	line-height: 1.2em;
 	font-family: 'Centra', sans-serif;
 }
+
+.tech-nav {
+	max-width: 100%;
+	width: 100%;
+}
+
+.tech-card-img {
+	width: 70%;
+	height: 70%;
+	object-fit: cover;
+}
+
+.tech-content {
+	 margin-left: 10%;
+}

@@ -6,6 +6,7 @@ import { Footer } from './components/Footer'
 import { NavBar } from './components/NavBar.js'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills.js'
+import { Technologies } from './components/Technologies.js'
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<NavBar />
 			<Banner />
 			<Skills />
+			<Technologies />
 			<Projects />
 			<Contact />
 			<Footer />
