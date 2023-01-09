@@ -16,13 +16,16 @@ export const Contact = () => {
 		e.preventDefault()
 		setButtonText('Sending...')
 
-		let response = await fetch('https://prtfolio-mailer.herokuapp.com', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(formDetails)
-		})
+		let response = await fetch(
+			'https://prtfolio-mailer.herokuapp.com/contact',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formDetails)
+			}
+		)
 
 		setButtonText('Send Message')
 
