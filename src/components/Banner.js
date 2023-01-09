@@ -89,10 +89,12 @@ export const Banner = () => {
 										products that provide pixel-perfect,
 										performant experiences.
 									</p>
-									<button onClick={() => console.log('a')}>
-										Let's connect{' '}
-										<ArrowRightCircle size={25} />
-									</button>
+									<a href='#connect'>
+										<button>
+											Let's connect{' '}
+											<ArrowRightCircle size={25} />
+										</button>
+									</a>
 								</div>
 							)}
 						</TrackVisibility>

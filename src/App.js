@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import { About } from './components/About'
 import { Banner } from './components/Banner.js'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -13,8 +14,9 @@ function App() {
 		<div className='App'>
 			<NavBar />
 			<Banner />
-			<Skills />
+			<About />
 			<Technologies />
+			<Skills />
 			<Projects />
 			<Contact />
 			<Footer />
