@@ -8,13 +8,9 @@ export const Banner = () => {
 	const [loopNum, setLoopNum] = React.useState(0)
 	const [isDeleting, setIsDeleting] = React.useState(false)
 	const [headerText, setHeaderText] = React.useState('')
-	const period = 2000
-	const [delta, setDelta] = React.useState(300 - Math.random() * 400)
-	const toRotate = [
-		'Fullstack Developer',
-		'Mobile Developer',
-		'Data Scientist'
-	]
+	const period = 1500
+	const [delta, setDelta] = React.useState(1000 - Math.random() * 400)
+	const toRotate = ['Fullstack', 'Mobile', 'DataScientist']
 
 	React.useEffect(() => {
 		let ticker = setInterval(() => {
@@ -24,7 +20,7 @@ export const Banner = () => {
 		return () => {
 			clearInterval(ticker)
 		}
-	}, [headerText])
+	})
 
 	const tick = () => {
 		let index = loopNum % toRotate.length
@@ -36,7 +32,7 @@ export const Banner = () => {
 		setHeaderText(updatedText)
 
 		if (isDeleting) {
-			setDelta((previousDelta) => previousDelta / 2)
+			setDelta((previousDelta) => previousDelta / 3)
 		}
 
 		if (!isDeleting && updatedText === fullText) {
@@ -45,7 +41,7 @@ export const Banner = () => {
 		} else if (isDeleting && updatedText === '') {
 			setIsDeleting(false)
 			setLoopNum(loopNum + 1)
-			setDelta(500)
+			setDelta(1500)
 		}
 	}
 

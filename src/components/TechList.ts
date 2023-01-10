@@ -69,6 +69,14 @@ export const DataScienceTechList = [
 		logo: `${templateUrl}python.svg`
 	},
 	{
+		name: 'Jupyter',
+		logo: `https://jupyter.org/assets/homepage/main-logo.svg`
+	},
+	{
+		name: 'SQL',
+		logo: `${templateUrl}sql.svg`
+	},
+	{
 		name: 'NumPy',
 		logo: `${templateUrl}numpy.svg`
 	},
@@ -86,7 +94,7 @@ export const DataScienceTechList = [
 	},
 	{
 		name: 'Scikit-Learn',
-		logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg'
+		logo: 'https://images.opencollective.com/scikit-learn/664f062/logo/256.png'
 	}
 ]
 

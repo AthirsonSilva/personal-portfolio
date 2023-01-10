@@ -370,6 +370,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
+
+@media (max-width: 900px) {	
+	.tab-pill-txtx {
+		font-size: 6px;
+	}
+}
+
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
@@ -421,16 +428,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  opacity: 0.85;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4d36b4 111.58%);
+  opacity: 0.66;
   position: absolute;
   width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
 }
+
+.proj-imgx-mobile::before {
+	content: "";
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4d36b4 111.58%);
+  opacity: 0.66;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .proj-imgbx:hover::before {
   height: 100%;
 }
+
 .proj-txtx {
   position: absolute;
   text-align: center;
@@ -438,12 +456,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out;
-  opacity: 0;
   width: 100%;
 }
+
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
-  opacity: 1;
 }
 .proj-txtx h4 {
   font-size: 30px;
@@ -632,11 +649,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .tech-card-img {
-	width: 70%;
-	height: 70%;
+	width: 40%;
+	height: 40%;
 	object-fit: cover;
+	margin-right: 5%;
+}
+
+.tech-imgbx {
+	height: auto
 }
 
 .tech-content {
-	 margin-left: 10%;
+	 margin-left: 12.5%;
+}
+
+.tech-txtx {
+	margin-left: 10%;
+}
+
+.tech-col {
+	margin-top: 2.5%;
+	margin-bottom: 2.5%;
 }

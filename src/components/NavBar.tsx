@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'

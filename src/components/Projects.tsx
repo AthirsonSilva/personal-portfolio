@@ -1,3 +1,4 @@
+import React from 'react'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
 import colorSharp2 from '../assets/img/color-sharp2.png'
@@ -9,6 +10,21 @@ import {
 } from './ProjectList'
 
 export const Projects = () => {
+	const [isMobile, setIsMobile] = React.useState<boolean>()
+	const handleResize = () => {
+		if (window.innerWidth <= 768) {
+			console.log('is mobile')
+			setIsMobile(true)
+		} else {
+			console.log('is desktop')
+			setIsMobile(false)
+		}
+	}
+
+	React.useEffect(() => {
+		window.addEventListener('resize', handleResize)
+	})
+
 	return (
 		<section className='project' id='projects'>
 			<Container>
@@ -43,17 +59,19 @@ export const Projects = () => {
 							>
 								<Nav.Item>
 									<Nav.Link eventKey='first'>
-										Backend
+										{isMobile ? 'Backend' : 'Backend/ API'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
 									<Nav.Link eventKey='second'>
-										Frontend/ Mobile
+										{isMobile
+											? 'Frontend'
+											: 'Frontend/ Mobile'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
 									<Nav.Link eventKey='third'>
-										Data science
+										{isMobile ? 'DS' : 'Data Science'}
 									</Nav.Link>
 								</Nav.Item>
 							</Nav>

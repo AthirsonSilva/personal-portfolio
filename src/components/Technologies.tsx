@@ -1,3 +1,4 @@
+import React from 'react'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
 import colorSharp2 from '../assets/img/color-sharp2.png'
@@ -9,6 +10,21 @@ import {
 } from './TechList'
 
 export const Technologies = () => {
+	const [isMobile, setIsMobile] = React.useState<boolean>()
+	const handleResize = () => {
+		if (window.innerWidth <= 768) {
+			console.log('is mobile')
+			setIsMobile(true)
+		} else {
+			console.log('is desktop')
+			setIsMobile(false)
+		}
+	}
+
+	React.useEffect(() => {
+		window.addEventListener('resize', handleResize)
+	})
+
 	return (
 		<section className='project technologies' id='technologies'>
 			<Container>
@@ -37,25 +53,35 @@ export const Technologies = () => {
 						>
 							<Nav
 								variant='pills'
-								className='tech-nav nav-pills mb-5 justify-content-center align-items-center'
+								className={
+									isMobile
+										? 'nav-pills mb-5 justify-content-center align-items-center nav-stacked'
+										: 'nav-pills mb-5 justify-content-center align-items-center'
+								}
 								id='pills-tab'
 							>
 								<Nav.Item>
-									<Nav.Link className='w-20' eventKey='first'>
-										Development
+									<Nav.Link
+										className='w-33 tab-linker'
+										eventKey='first'
+									>
+										{isMobile ? 'Dev' : 'Development'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
 									<Nav.Link
-										className='w-20'
+										className='w-33 tab-linker'
 										eventKey='second'
 									>
-										Data science
+										{isMobile ? 'DS' : 'Data Science'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
-									<Nav.Link className='w-20' eventKey='third'>
-										DevOps
+									<Nav.Link
+										className='w-33 tab-linker'
+										eventKey='third'
+									>
+										{isMobile ? 'DevOps' : 'DevOps'}
 									</Nav.Link>
 								</Nav.Item>
 							</Nav>

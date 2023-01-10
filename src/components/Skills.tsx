@@ -1,3 +1,4 @@
+import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -45,24 +46,27 @@ export const Skills = () => {
 								className='skill-slider'
 							>
 								<div className='item'>
-									<img src={meter1} alt='react' />
-									<h5>Backend development</h5>
+									<img src={meter1} alt='backend-meter' />
+									<h6>Backend</h6>
 								</div>
 								<div className='item'>
-									<img src={meter2} alt='react' />
-									<h5>Frontend development</h5>
+									<img src={meter2} alt='frontend-meter' />
+									<h6>Frontend</h6>
 								</div>
 								<div className='item'>
-									<img src={meter3} alt='react' />
-									<h5>Data science</h5>
+									<img
+										src={meter3}
+										alt='data-science-meter'
+									/>
+									<h6>Data-Science</h6>
 								</div>
 								<div className='item'>
-									<img src={meter3} alt='react' />
-									<h5>DevOps</h5>
+									<img src={meter3} alt='devops-meter' />
+									<h6>DevOps</h6>
 								</div>
 								<div className='item'>
-									<img src={meter2} alt='react' />
-									<h5>Mobile development</h5>
+									<img src={meter2} alt='mobile-meter' />
+									<h6>Mobile</h6>
 								</div>
 							</Carousel>
 						</div>

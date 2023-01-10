@@ -13,6 +13,12 @@ export const Contact = () => {
 		message: '',
 		phone: ''
 	}
+	const [formDetails, setFormDetails] = React.useState(formInitialDetails)
+	const [buttonText, setButtonText] = React.useState('Send Message')
+	const [status, setStatus] = React.useState({
+		success: false,
+		message: ''
+	})
 
 	const validatePhone = () => {
 		const userPhone = phone(formDetails.phone)
@@ -59,7 +65,7 @@ export const Contact = () => {
 		return true
 	}
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault()
 		setButtonText('Sending...')
 
@@ -131,10 +137,6 @@ export const Contact = () => {
 			})
 		}
 	}
-
-	const [formDetails, setFormDetails] = React.useState(formInitialDetails)
-	const [buttonText, setButtonText] = React.useState('Send Message')
-	const [status, setStatus] = React.useState({})
 
 	const onFormUpdate = (key, value) => {
 		setFormDetails({ ...formDetails, [key]: value })
@@ -248,7 +250,7 @@ export const Contact = () => {
 											</Col>
 											<Col>
 												<textarea
-													row='6'
+													rows={6}
 													value={formDetails.message}
 													placeholder='Message'
 													onChange={(e) =>
@@ -257,8 +259,12 @@ export const Contact = () => {
 															e.target.value
 														)
 													}
+													style={{
+														width: '100%'
+													}}
 													required
 												></textarea>
+												<br></br>
 												<button type='submit'>
 													<span>{buttonText}</span>
 												</button>
