@@ -1,5 +1,4 @@
 import * as EmailValidator from 'email-validator'
-import { phone } from 'phone'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
@@ -7,11 +6,9 @@ import contactImg from '../assets/img/contact-img.svg'
 
 export const Contact = () => {
 	const formInitialDetails = {
-		firstName: '',
-		lastName: '',
-		email: '',
-		message: '',
-		phone: ''
+		ownerRef: '',
+		fromEmail: '',
+		bodyEmail: ''
 	}
 	const [formDetails, setFormDetails] = React.useState(formInitialDetails)
 	const [buttonText, setButtonText] = React.useState('Send Message')
@@ -20,33 +17,16 @@ export const Contact = () => {
 		message: ''
 	})
 
-	const validatePhone = () => {
-		const userPhone = phone(formDetails.phone)
-
-		if (!userPhone.isValid) {
-			return false
-		}
-
-		return true
-	}
-
 	const validateEmail = () => {
-		if (!EmailValidator.validate(formDetails.email)) {
-			return false
-		}
-
-		return true
+		return EmailValidator.validate(formDetails.fromEmail)
 	}
 
-	const validateNames = () => {
-		if (
-			formDetails.firstName.length < 2 ||
-			formDetails.lastName.length > 20
-		) {
+	const validateOwnerRef = () => {
+		if (formDetails.ownerRef.length > 20) {
 			return false
 		} else if (
-			formDetails.lastName.length < 2 ||
-			formDetails.lastName.length > 20
+			formDetails.ownerRef.length < 2 ||
+			formDetails.ownerRef.length > 20
 		) {
 			return false
 		}
@@ -54,15 +34,10 @@ export const Contact = () => {
 		return true
 	}
 
-	const validateMessage = () => {
-		if (
-			formDetails.message.length < 10 ||
-			formDetails.message.length > 500
-		) {
-			return false
-		}
-
-		return true
+	const validateEmailBody = () => {
+		return !(
+			formDetails.bodyEmail.length < 10 || formDetails.bodyEmail.length > 500
+		)
 	}
 
 	const handleSubmit = async (e: any) => {
@@ -72,24 +47,14 @@ export const Contact = () => {
 		if (!validateEmail()) {
 			setStatus({
 				success: false,
-				message: 'Please enter a valid phone number'
+				message: 'Please enter a valid email address!'
 			})
 
 			setButtonText('Send Message Again')
 			return false
 		}
 
-		if (!validatePhone()) {
-			setStatus({
-				success: false,
-				message: 'Please enter a valid phone number'
-			})
-
-			setButtonText('Send Message Again')
-			return false
-		}
-
-		if (!validateNames()) {
+		if (!validateOwnerRef()) {
 			setStatus({
 				success: false,
 				message: 'The message must be between 10 and 500 characters!'
@@ -99,7 +64,7 @@ export const Contact = () => {
 			return false
 		}
 
-		if (!validateMessage()) {
+		if (!validateEmailBody()) {
 			setStatus({
 				success: false,
 				message: 'The message must be between 10 and 500 characters!'
@@ -109,22 +74,17 @@ export const Contact = () => {
 			return false
 		}
 
-		let response = await fetch(
-			'https://prtfolio-mailer.herokuapp.com/contact',
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(formDetails)
-			}
-		)
+		let response = await fetch('http://localhost:8080/api/v1/email', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(formDetails)
+		})
 
 		setButtonText('Send Message')
 
-		let result = await response.json()
-
-		if (result.code === 200) {
+		if (response.status === 201) {
 			setFormDetails(formInitialDetails)
 			setStatus({
 				success: true,
@@ -138,7 +98,7 @@ export const Contact = () => {
 		}
 	}
 
-	const onFormUpdate = (key, value) => {
+	const onFormUpdate = (key: string, value: string) => {
 		setFormDetails({ ...formDetails, [key]: value })
 	}
 
@@ -151,9 +111,7 @@ export const Contact = () => {
 							{({ isVisible }) => (
 								<img
 									className={
-										isVisible
-											? 'animate__animated animate__zoomIn'
-											: ''
+										isVisible ? 'animate__animated animate__zoomIn' : ''
 									}
 									src={contactImg}
 									alt='Contact Us'
@@ -166,84 +124,30 @@ export const Contact = () => {
 							{({ isVisible }) => (
 								<div
 									className={
-										isVisible
-											? 'animate__animated animate__fadeIn'
-											: ''
+										isVisible ? 'animate__animated animate__fadeIn' : ''
 									}
 								>
 									<h2>Get in Touch</h2>
 									<form onSubmit={handleSubmit}>
 										<Row>
-											<Col
-												size={12}
-												sm={6}
-												className='px-1'
-											>
+											<Col size={11} sm={6} className='px-1'>
 												<input
 													type='text'
-													value={
-														formDetails.firstName
-													}
-													placeholder='First Name'
+													value={formDetails.ownerRef}
+													placeholder='Your name'
 													onChange={(e) =>
-														onFormUpdate(
-															'firstName',
-															e.target.value
-														)
+														onFormUpdate('ownerRef', e.target.value)
 													}
 													required
 												/>
 											</Col>
-											<Col
-												size={12}
-												sm={6}
-												className='px-1'
-											>
-												<input
-													type='text'
-													value={formDetails.lastName}
-													placeholder='Last Name'
-													onChange={(e) =>
-														onFormUpdate(
-															'lastName',
-															e.target.value
-														)
-													}
-													required
-												/>
-											</Col>
-											<Col
-												size={12}
-												sm={6}
-												className='px-1'
-											>
+											<Col size={10} sm={6} className='px-1'>
 												<input
 													type='email'
-													value={formDetails.email}
+													value={formDetails.fromEmail}
 													placeholder='Email Address'
 													onChange={(e) =>
-														onFormUpdate(
-															'email',
-															e.target.value
-														)
-													}
-													required
-												/>
-											</Col>
-											<Col
-												size={12}
-												sm={6}
-												className='px-1'
-											>
-												<input
-													type='phone'
-													value={formDetails.phone}
-													placeholder='Phone Number'
-													onChange={(e) =>
-														onFormUpdate(
-															'phone',
-															e.target.value
-														)
+														onFormUpdate('fromEmail', e.target.value)
 													}
 													required
 												/>
@@ -251,13 +155,10 @@ export const Contact = () => {
 											<Col>
 												<textarea
 													rows={6}
-													value={formDetails.message}
+													value={formDetails.bodyEmail}
 													placeholder='Message'
 													onChange={(e) =>
-														onFormUpdate(
-															'message',
-															e.target.value
-														)
+														onFormUpdate('bodyEmail', e.target.value)
 													}
 													style={{
 														width: '100%'
@@ -272,9 +173,7 @@ export const Contact = () => {
 											{status.message && (
 												<p
 													className={
-														status.success === true
-															? 'success'
-															: 'danger'
+														status.success === true ? 'success' : 'danger'
 													}
 													style={{
 														marginTop: '1.2rem',
