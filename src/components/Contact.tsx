@@ -8,7 +8,8 @@ export const Contact = () => {
 	const formInitialDetails = {
 		ownerRef: '',
 		fromEmail: '',
-		bodyEmail: ''
+		bodyEmail: '',
+		hidden: ''
 	}
 	const [formDetails, setFormDetails] = React.useState(formInitialDetails)
 	const [buttonText, setButtonText] = React.useState('Send Message')
@@ -71,6 +72,16 @@ export const Contact = () => {
 			})
 
 			setButtonText('Send Message Again')
+			return false
+		}
+
+		if (formDetails.hidden !== '' || formDetails.hidden.length > 0) {
+			setStatus({
+				success: false,
+				message: 'Get outta here you sneaky bot!'
+			})
+
+			setButtonText('Get outta here!')
 			return false
 		}
 
@@ -188,6 +199,15 @@ export const Contact = () => {
 												</p>
 											)}
 										</Row>
+										<Col size={10} sm={6} className='px-1'>
+											<input
+												type='text'
+												className='hidden'
+												value={formDetails.hidden}
+												placeholder='Subject'
+												onChange={(e) => onFormUpdate('hidden', e.target.value)}
+											/>
+										</Col>
 									</form>
 								</div>
 							)}

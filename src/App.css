@@ -671,3 +671,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	margin-top: 2.5%;
 	margin-bottom: 2.5%;
 }
+
+.hidden {
+	display: none;
+}
