@@ -74,17 +74,20 @@ export const Contact = () => {
 			return false
 		}
 
-		let response = await fetch('http://localhost:8080/api/v1/email', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(formDetails)
-		})
+		let response = await fetch(
+			'https://prtfolio-mailer.herokuapp.com/api/v1/email/',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formDetails)
+			}
+		)
 
 		setButtonText('Send Message')
 
-		if (response.status === 201) {
+		if (response.status === 201 || response.status === 200) {
 			setFormDetails(formInitialDetails)
 			setStatus({
 				success: true,
