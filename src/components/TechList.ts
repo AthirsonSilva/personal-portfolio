@@ -14,16 +14,16 @@ export const DevelopmentTechList = [
 		logo: `${templateUrl}javascript.svg`
 	},
 	{
+		name: 'TypeScript',
+		logo: `${templateUrl}typescript.svg`
+	},
+	{
 		name: 'React',
 		logo: `${templateUrl}react-native.svg`
 	},
 	{
 		name: 'Bootstrap',
 		logo: `${templateUrl}bootstrap.svg`
-	},
-	{
-		name: 'TypeScript',
-		logo: `${templateUrl}typescript.svg`
 	},
 	{
 		name: 'Node.js',
@@ -38,14 +38,6 @@ export const DevelopmentTechList = [
 		logo: `${templateUrl}nestjs.svg`
 	},
 	{
-		name: 'GraphQL',
-		logo: `${templateUrl}graphql.svg`
-	},
-	{
-		name: 'Deno.js',
-		logo: `${templateUrl}deno.svg`
-	},
-	{
 		name: 'PHP',
 		logo: `https://www.svgrepo.com/show/303208/php-1-logo.svg`
 	},
@@ -56,6 +48,10 @@ export const DevelopmentTechList = [
 	{
 		name: 'Java',
 		logo: `${templateUrl}java-coffee-cup-logo.svg`
+	},
+	{
+		name: 'Spring',
+		logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
 	},
 	{
 		name: 'Python',
@@ -91,10 +87,6 @@ export const DataScienceTechList = [
 	{
 		name: 'Seaborn',
 		logo: 'https://seeklogo.com/images/S/seaborn-logo-244EB2DEC5-seeklogo.com.png'
-	},
-	{
-		name: 'Scikit-Learn',
-		logo: 'https://images.opencollective.com/scikit-learn/664f062/logo/256.png'
 	}
 ]
 
@@ -112,8 +104,16 @@ export const DevOpsTechList = [
 		logo: `${templateUrl}docker.svg`
 	},
 	{
+		name: 'AWS',
+		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg`
+	},
+	{
 		name: 'Linux',
 		logo: `${templateUrl}linux.svg`
+	},
+	{
+		name: 'Bash',
+		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg`
 	},
 	{
 		name: 'MySQL',
@@ -121,7 +121,11 @@ export const DevOpsTechList = [
 	},
 	{
 		name: 'postgres',
-		logo: `${templateUrl}postgresql.svg`
+		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg`
+	},
+	{
+		name: 'SQLite',
+		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg`
 	},
 	{
 		name: 'SQL Server',

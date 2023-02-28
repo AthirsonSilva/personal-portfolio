@@ -35,10 +35,9 @@ export const Skills = () => {
 						<div className='skill-bx'>
 							<h2>Skills</h2>
 							<p>
-								I have a strong passion for backend development,
-								linux and data science. I am always looking for
-								new opportunities and challenges to learn and
-								grow.
+								I have a strong passion for backend development, linux and
+								software engineering in general. I am always looking for new
+								opportunities and challenges to learn and grow.
 							</p>
 							<Carousel
 								responsive={responsive}
@@ -54,10 +53,7 @@ export const Skills = () => {
 									<h6>Frontend</h6>
 								</div>
 								<div className='item'>
-									<img
-										src={meter3}
-										alt='data-science-meter'
-									/>
+									<img src={meter3} alt='data-science-meter' />
 									<h6>Data-Science</h6>
 								</div>
 								<div className='item'>

@@ -33,7 +33,7 @@ export const NavBar = () => {
 			<Navbar expand='md' className={scrolled ? 'scrolled' : ''}>
 				<Container>
 					<Navbar.Brand href='/'>
-						<h1 className='brand-name'>Athirson</h1>
+						<h1 className='brand-name'>Athirson Silva</h1>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls='basic-navbar-nav'>
 						<span className='navbar-toggler-icon'></span>
@@ -43,9 +43,7 @@ export const NavBar = () => {
 							<Nav.Link
 								href='#home'
 								className={
-									activeLink === 'home'
-										? 'active navbar-link'
-										: 'navbar-link'
+									activeLink === 'home' ? 'active navbar-link' : 'navbar-link'
 								}
 								onClick={() => onUpdateActiveLink('home')}
 							>
@@ -54,9 +52,7 @@ export const NavBar = () => {
 							<Nav.Link
 								href='#skills'
 								className={
-									activeLink === 'skills'
-										? 'active navbar-link'
-										: 'navbar-link'
+									activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'
 								}
 								onClick={() => onUpdateActiveLink('skills')}
 							>
@@ -80,9 +76,7 @@ export const NavBar = () => {
 										? 'active navbar-link'
 										: 'navbar-link'
 								}
-								onClick={() =>
-									onUpdateActiveLink('technologies')
-								}
+								onClick={() => onUpdateActiveLink('technologies')}
 							>
 								Technologies
 							</Nav.Link>

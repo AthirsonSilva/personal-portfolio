@@ -10,7 +10,8 @@ export const Footer = () => {
 			<Container>
 				<Row className='align-item-center'>
 					<Col sm={6} className='text-center mb-2'>
-						<h1 className='brand-name'>Athirson</h1>
+						<h1 className='brand-name'>Athirson Silva</h1>
+						<small>Software Engineer</small>
 					</Col>
 					<Col sm={6} className='text-center text-sm-end'>
 						<div className='social-icon'>
@@ -24,9 +25,7 @@ export const Footer = () => {
 								<img src={navIcon3} alt='' />
 							</a>
 						</div>
-						<p>
-							Copyright 2022. All Right Reserved by Athirson Silva
-						</p>
+						<p>Copyright 2022. All Right Reserved by Athirson Silva</p>
 					</Col>
 				</Row>
 			</Container>

@@ -144,7 +144,7 @@ export const Contact = () => {
 									<h2>Get in Touch</h2>
 									<form onSubmit={handleSubmit}>
 										<Row>
-											<Col size={11} sm={6} className='px-1'>
+											<Col size={10} sm={6} className='px-1'>
 												<input
 													type='text'
 													value={formDetails.ownerRef}

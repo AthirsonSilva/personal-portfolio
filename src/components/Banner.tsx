@@ -9,8 +9,8 @@ export const Banner = () => {
 	const [isDeleting, setIsDeleting] = React.useState(false)
 	const [headerText, setHeaderText] = React.useState('')
 	const period = 1500
-	const [delta, setDelta] = React.useState(1000 - Math.random() * 400)
-	const toRotate = ['Fullstack', 'Mobile', 'DataScientist']
+	const [delta, setDelta] = React.useState(100 - Math.random() * 44)
+	const toRotate = ['Backend Developer']
 
 	React.useEffect(() => {
 		let ticker = setInterval(() => {
@@ -32,7 +32,7 @@ export const Banner = () => {
 		setHeaderText(updatedText)
 
 		if (isDeleting) {
-			setDelta((previousDelta) => previousDelta / 3)
+			setDelta((previousDelta) => previousDelta / 4)
 		}
 
 		if (!isDeleting && updatedText === fullText) {
@@ -41,7 +41,7 @@ export const Banner = () => {
 		} else if (isDeleting && updatedText === '') {
 			setIsDeleting(false)
 			setLoopNum(loopNum + 1)
-			setDelta(1500)
+			setDelta(100 - Math.random() * 44)
 		}
 	}
 
@@ -54,14 +54,10 @@ export const Banner = () => {
 							{({ isVisible }) => (
 								<div
 									className={
-										isVisible
-											? 'animated_animated animate__fadeIn'
-											: ''
+										isVisible ? 'animated_animated animate__fadeIn' : ''
 									}
 								>
-									<span className='tagline'>
-										Welcome to my Portfolio
-									</span>
+									<span className='tagline'>Welcome to my Portfolio</span>
 									<h1>
 										{`Hi i'm Athirson`}
 										<br />
@@ -73,22 +69,19 @@ export const Banner = () => {
 											}}
 											className='wrap'
 										>
-											{headerText}
+											and i am a {headerText}
 										</span>
 									</h1>
 									<p>
-										I'm a Fullstack Developer, Mobile
-										Developer and Data Scientist. I love to
-										build things that live on the internet,
-										from websites to apps, or anything in
-										between. My goal is to always build
-										products that provide pixel-perfect,
-										performant experiences.
+										I love to build things that live on the internet, mainly on
+										the server-side, from RESTful APIs, GraphQL applications,
+										Websocket and Microservices, or anything in between. My goal
+										is to always build products that provide value to other
+										people.
 									</p>
 									<a href='#connect'>
 										<button>
-											Let's connect{' '}
-											<ArrowRightCircle size={25} />
+											Let's connect <ArrowRightCircle size={25} />
 										</button>
 									</a>
 								</div>
