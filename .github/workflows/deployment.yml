@@ -1,8 +1,9 @@
 name: Personal portfolio deploy workflow
 
 on:
-  push:
-    branches: [main]
+  schedule:
+    # every 24 hours
+    - cron: '0 */24 * * *'
 
 jobs:
   deploy:
