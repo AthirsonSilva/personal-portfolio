@@ -1,0 +1,24 @@
+name: Personal portfolio deploy workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '19.x'
+      - run: npm cis
+      - run: npm run build
+      - run: gh-pages -d build
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: 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
