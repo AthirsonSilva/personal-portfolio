@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '19.x'
-      - run: npm cis
+      - run: npm ci
       - run: npm run build
       - run: gh-pages -d build
       - name: Deploy
