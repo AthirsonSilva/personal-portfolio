@@ -2,15 +2,14 @@ name: Personal portfolio deploy workflow
 
 on:
   schedule:
-    # every 1 hour
     - cron: '0 */1 * * *'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/setup-node@v3.6.0
         with:
           node-version: '19.x'
       - run: npm ci
