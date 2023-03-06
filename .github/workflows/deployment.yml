@@ -20,4 +20,4 @@ jobs:
           target_branch: gh-pages
           build_dir: build
         env:
-          GITHUB_TOKEN: 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
+          GITHUB_TOKEN: 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
