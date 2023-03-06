@@ -8,20 +8,7 @@ import { getRecentProjects } from './ProjectList'
 export const Projects = () => {
 	const [projects, setProjects] = React.useState<any[]>([])
 
-	const [isMobile, setIsMobile] = React.useState<boolean>()
-	const handleResize = () => {
-		if (window.innerWidth <= 768) {
-			console.log('is mobile')
-			setIsMobile(true)
-		} else {
-			console.log('is desktop')
-			setIsMobile(false)
-		}
-	}
-
 	React.useEffect(() => {
-		window.addEventListener('resize', handleResize)
-
 		getRecentProjects().then((data) => {
 			setProjects(data)
 		})
