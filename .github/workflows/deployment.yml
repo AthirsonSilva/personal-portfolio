@@ -2,7 +2,7 @@ name: Personal portfolio deploy workflow
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 */24 * * *'
 
 jobs:
   deploy:
