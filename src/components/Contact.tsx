@@ -86,7 +86,7 @@ export const Contact = () => {
 		}
 
 		let response = await fetch(
-			'https://prt-mailer-production.up.railway.app/api/v1/email',
+			'https://portfolio-mailer-joj1.onrender.com/api/v1/email',
 			{
 				method: 'POST',
 				headers: {
