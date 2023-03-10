@@ -9,12 +9,17 @@ export const Projects = () => {
 	const [projects, setProjects] = React.useState<any[]>([])
 
 	React.useEffect(() => {
-		getRecentProjects().then((data) => {
-			setProjects(data)
+		getProjects().then(() => {
+			console.log('Projects loaded')
 		})
-
-		console.log('projects', projects)
 	})
+
+	async function getProjects() {
+		const repos = await getRecentProjects()
+		setProjects(repos)
+
+		console.log('repos', repos)
+	}
 
 	return (
 		<section className='project' id='projects'>
