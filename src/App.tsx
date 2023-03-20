@@ -10,7 +10,7 @@ import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Technologies } from './components/Technologies'
 
-function App() {
+const App = () => {
 	return (
 		<div className='App'>
 			<NavBar />

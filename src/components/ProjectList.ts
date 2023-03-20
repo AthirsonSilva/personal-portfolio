@@ -1,12 +1,21 @@
+export type Repository = {
+	name: string
+	description: string
+	language: string
+	html_url: string
+	private?: boolean
+	fork?: boolean
+}
+
 export async function getRecentProjects(): Promise<any[]> {
-	let repositories = []
+	let repositories: Repository[] = []
 
 	await fetch(
 		'https://api.github.com/users/athirsonsilva/repos?sort=updated&per_page=4'
 	)
 		.then(async (response) => await response.json())
 		.then((data) => {
-			data.forEach((repository) => {
+			data.forEach((repository: Repository) => {
 				repositories.push(repository)
 			})
 		})
@@ -21,9 +30,15 @@ export async function getRecentProjects(): Promise<any[]> {
 	repositories = repositories.map((repository) => {
 		return {
 			name: repository.name === null ? 'No name' : repository.name,
-			description: repository.description === null ? 'No description' : repository.description,
+			description:
+				repository.description === null
+					? 'No description'
+					: repository.description,
 			language: repository.language === null ? 'markdown' : repository.language,
-			html_url: repository.html_url === null ? 'https://github.com/AthirsonSilva/' : repository.html_url,
+			html_url:
+				repository.html_url === null
+					? 'https://github.com/AthirsonSilva/'
+					: repository.html_url
 		}
 	})
 

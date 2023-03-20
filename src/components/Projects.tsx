@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
 import colorSharp2 from '../assets/img/color-sharp2.png'
 import { ProjectCard } from './ProjectCard'
-import { getRecentProjects } from './ProjectList'
+import { Repository, getRecentProjects } from './ProjectList'
 
 export const Projects = () => {
 	const [projects, setProjects] = React.useState<any[]>([])
@@ -48,7 +48,7 @@ export const Projects = () => {
 						<br></br>
 						<Container className='mt-6'>
 							<Row>
-								{projects.map((project) => (
+								{projects.map((project: Repository) => (
 									<ProjectCard
 										name={project.name}
 										language={project.language.toLowerCase()}
