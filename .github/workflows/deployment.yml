@@ -3,9 +3,23 @@ name: Personal portfolio deploy workflow
 on:
   schedule:
     - cron: '0 */24 * * *'
-    
+
   push:
     branches: ['master']
+
+  pull_request:
+    branches: ['master']
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
     
   pull_request:
     branches: ['master']
@@ -13,17 +27,27 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3.3.0
-      - uses: actions/setup-node@v3.6.0
+        steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '19.x'
-      - run: npm ci
-      - run: npm run build
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          target_branch: gh-pages
-          build_dir: dist
+          target-branch: gh-pages
+          path: './dist'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
