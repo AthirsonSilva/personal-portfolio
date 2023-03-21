@@ -7,7 +7,7 @@ on:
   push:
     branches: ['master']
 
-  pull-request:
+  pull_request:
     branches: ['master']
 
   workflow_dispatch:
@@ -20,6 +20,9 @@ permissions:
 concurrency:
   group: 'pages'
   cancel-in-progress: true
+    
+  pull_request:
+    branches: ['master']
 
 jobs:
   deploy:
