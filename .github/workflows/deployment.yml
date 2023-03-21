@@ -3,6 +3,9 @@ name: Personal portfolio deploy workflow
 on:
   schedule:
     - cron: '0 */24 * * *'
+    
+  push:
+    branches: master
 
 jobs:
   deploy:
