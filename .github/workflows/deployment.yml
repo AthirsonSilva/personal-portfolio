@@ -43,6 +43,7 @@ jobs:
         with:
           target-branch: gh-pages
           path: './dist'
+          build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Deploy to Github Pages
