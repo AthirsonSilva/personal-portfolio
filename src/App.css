@@ -1,17 +1,17 @@
 /************ Custom Font ************/
 @font-face {
 	font-family: Centra;
-	src: url('./assets/fonts/CentraNo2-Bold.ttf');
+	src: url('/src/assets/fonts/CentraNo2-Bold.ttf');
 	font-weight: 700;
 }
 @font-face {
 	font-family: Centra;
-	src: url('./assets/fonts/CentraNo2-Medium.ttf');
+	src: url('/src/assets/fonts/CentraNo2-Medium.ttf');
 	font-weight: 500;
 }
 @font-face {
 	font-family: Centra;
-	src: url('./assets/fonts/CentraNo2-Book.ttf');
+	src: url('/src/assets/fonts/CentraNo2-Book.ttf');
 	font-weight: 400;
 }
 
@@ -249,7 +249,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
+  background-image: url('/src/assets/img/banner-bg.png');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -318,7 +318,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ About Css ************/
 .about {
   padding: 0 0 50px 0;
-	background-image: url('./assets/img/bottom-banner.png');
+	background-image: url('/src/assets/img/bottom-banner.png');
 	background-position: bottom center;
 	background-size: cover;
   position: relative;
@@ -335,7 +335,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Skills Css ************/
 .skill {
   padding: 0 0 50px 0;
-	background-image: url('./assets/img/section-bg.png');
+	background-image: url('/src/assets/img/section-bg.png');
 	background-position: bottom center;
 	background-size: cover;
   position: relative;
@@ -379,7 +379,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-	background-image: url('./assets/img/section-bg.png');
+	background-image: url('/src/assets/img/section-bg.png');
   background-color: black;
 }
 .project h2 {
@@ -525,7 +525,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background-image: url('./assets/img/section-bg.png');
+  background-image: url('/src/assets/img/section-bg.png');
   padding: 60px 0 200px 0;
 }
 .contact img {
