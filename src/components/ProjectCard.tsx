@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col } from 'react-bootstrap'
 
 type Props = {
@@ -9,6 +8,34 @@ type Props = {
 }
 
 export const ProjectCard = ({ name, language, description, github }: Props) => {
+	const checkLanguage = () => {
+		switch (language) {
+			case 'c#':
+				return 'csharp'
+
+			case 'c++':
+				return 'cplusplus'
+
+			case 'shell':
+				return 'bash'
+
+			case 'jupyter notebook':
+				return 'jupyter'
+
+			case 'html':
+				return 'html5'
+
+			case 'css':
+				return 'css3'
+
+			default:
+				return language
+		}
+	}
+
+	language = checkLanguage()
+
+
 	return (
 		<Col sm={3} md={3}>
 			<div className='proj-imgbx' onClick={() => window.open(github, '_blank')}>
