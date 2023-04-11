@@ -1,84 +1,89 @@
-const templateUrl = 'https://img.icons8.com/color/48/000000/'
+const icons8Template = 'https://img.icons8.com/color/48/000000/'
+const devIconTemplate = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'
 
 export const DevelopmentTechList = [
 	{
 		name: 'HTML',
-		logo: `${templateUrl}html-5.svg`
+		logo: `${icons8Template}html-5.svg`
 	},
 	{
 		name: 'CSS',
-		logo: `${templateUrl}css3.svg`
+		logo: `${icons8Template}css3.svg`
 	},
 	{
 		name: 'JavaScript',
-		logo: `${templateUrl}javascript.svg`
+		logo: `${icons8Template}javascript.svg`
 	},
 	{
 		name: 'TypeScript',
-		logo: `${templateUrl}typescript.svg`
+		logo: `${icons8Template}typescript.svg`
 	},
 	{
 		name: 'React',
-		logo: `${templateUrl}react-native.svg`
+		logo: `${icons8Template}react-native.svg`
 	},
 	{
 		name: 'Bootstrap',
-		logo: `${templateUrl}bootstrap.svg`
+		logo: `${icons8Template}bootstrap.svg`
 	},
 	{
 		name: 'Node.js',
-		logo: `${templateUrl}nodejs.svg`
+		logo: `${icons8Template}nodejs.svg`
 	},
 	{
 		name: 'Express.js',
-		logo: `${templateUrl}express.svg`
+		logo: `${icons8Template}express.svg`
 	},
 	{
 		name: 'NestJS',
-		logo: `${templateUrl}nestjs.svg`
+		logo: `${icons8Template}nestjs.svg`
 	},
 	{
 		name: 'PHP',
-		logo: `https://www.svgrepo.com/show/303208/php-1-logo.svg`
+		logo: `${devIconTemplate}php/php-original.svg`
 	},
 	{
 		name: 'Laravel',
-		logo: `https://img.icons8.com/fluency/512/laravel.png`
+		logo: `${devIconTemplate}laravel/laravel-plain-wordmark.svg`
 	},
 	{
 		name: 'Java',
-		logo: `${templateUrl}java-coffee-cup-logo.svg`
+		logo: `${icons8Template}java-coffee-cup-logo.svg`
 	},
 	{
 		name: 'Spring',
-		logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
+		logo: `${devIconTemplate}spring/spring-original.svg`
 	},
 	{
 		name: 'Python',
-		logo: `${templateUrl}python.svg`
+		logo: `${icons8Template}python.svg`
+	},
+	{
+		name: 'FastAPI',
+		logo: `${devIconTemplate}fastapi/fastapi-original.svg`
 	}
 ]
 
 export const DataScienceTechList = [
 	{
 		name: 'Python',
-		logo: `${templateUrl}python.svg`
+		logo: `${icons8Template}python.svg`
 	},
 	{
 		name: 'Jupyter',
-		logo: `https://jupyter.org/assets/homepage/main-logo.svg`
+		logo: `${devIconTemplate}jupyter/jupyter-original-wordmark.svg`
 	},
 	{
 		name: 'SQL',
-		logo: `${templateUrl}sql.svg`
+		logo: `${icons8Template}sql.svg`
 	},
 	{
 		name: 'NumPy',
-		logo: `${templateUrl}numpy.svg`
+		logo: `${icons8Template}numpy.svg`
 	},
 	{
 		name: 'Pandas',
-		logo: `${templateUrl}pandas.svg`
+		logo: `${icons8Template}pandas.svg`
 	},
 	{
 		name: 'Matplotlib',
@@ -93,50 +98,50 @@ export const DataScienceTechList = [
 export const DevOpsTechList = [
 	{
 		name: 'Git',
-		logo: `${templateUrl}git.svg`
+		logo: `${icons8Template}git.svg`
 	},
 	{
 		name: 'GitHub',
-		logo: `${templateUrl}github.svg`
+		logo: `${icons8Template}github.svg`
 	},
 	{
 		name: 'Docker',
-		logo: `${templateUrl}docker.svg`
+		logo: `${icons8Template}docker.svg`
 	},
 	{
 		name: 'AWS',
-		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg`
+		logo: `${devIconTemplate}amazonwebservices/amazonwebservices-plain-wordmark.svg`
 	},
 	{
 		name: 'Linux',
-		logo: `${templateUrl}linux.svg`
+		logo: `${icons8Template}linux.svg`
 	},
 	{
 		name: 'Bash',
-		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg`
+		logo: `${devIconTemplate}bash/bash-original.svg`
 	},
 	{
 		name: 'MySQL',
-		logo: `${templateUrl}mysql-logo.svg`
+		logo: `${icons8Template}mysql-logo.svg`
 	},
 	{
 		name: 'postgres',
-		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg`
+		logo: `${devIconTemplate}postgresql/postgresql-original.svg`
 	},
 	{
 		name: 'SQLite',
-		logo: `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg`
+		logo: `${devIconTemplate}sqlite/sqlite-original.svg`
 	},
 	{
 		name: 'SQL Server',
-		logo: `${templateUrl}microsoft-sql-server.svg`
+		logo: `${icons8Template}microsoft-sql-server.svg`
 	},
 	{
 		name: 'MongoDB',
-		logo: `${templateUrl}mongodb.svg`
+		logo: `${icons8Template}mongodb.svg`
 	},
 	{
 		name: 'Heroku',
-		logo: `${templateUrl}heroku.svg`
+		logo: `${icons8Template}heroku.svg`
 	}
 ]
