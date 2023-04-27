@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import 'react-multi-carousel/lib/styles.css'
 import me from '../assets/img/close-me-rounded.png'
@@ -9,7 +8,7 @@ import navIcon3 from '../assets/img/nav-icon3.svg'
 
 export const About = () => {
 	return (
-		<section className='about' id='skills'>
+		<section className='about' id='about'>
 			<Container>
 				<Row>
 					<Col>

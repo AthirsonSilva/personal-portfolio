@@ -39,6 +39,10 @@ export const Technologies = () => {
 								>
 									<h2>Technologies</h2>
 									<p>Here are some of the technologies I have worked with:</p>
+									<p>
+										I am always learning new things and I am excited to see
+										what the future of technology holds.
+									</p>
 								</div>
 							)}
 						</TrackVisibility>

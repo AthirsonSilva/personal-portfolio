@@ -1,0 +1,8 @@
+/************ Technologies Css ************/
+.technologies {
+	padding: 25px 0 150px 0;
+	background-image: url('/src/assets/img/backgrounds/fondo\ 8.jpeg');
+	background-position: bottom center;
+	background-size: cover;
+	position: relative;
+}

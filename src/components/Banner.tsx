@@ -1,8 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { ArrowRightCircle } from 'react-bootstrap-icons'
 import TrackVisibility from 'react-on-screen'
-import headerImg from '../assets/img/header-img.svg'
+import headerImg from '../assets/img/astronaut-computer.svg'
 
 export const Banner = () => {
 	const [loopNum, setLoopNum] = React.useState(0)
@@ -10,7 +9,7 @@ export const Banner = () => {
 	const [headerText, setHeaderText] = React.useState('')
 	const period = 1500
 	const [delta, setDelta] = React.useState(100 - Math.random() * 44)
-	const toRotate = ['Backend Developer']
+	const toRotate = ['Backend Developer', 'Linux Enthusiast', 'Fullstack Developer']
 
 	React.useEffect(() => {
 		let ticker = setInterval(() => {
@@ -57,7 +56,6 @@ export const Banner = () => {
 										isVisible ? 'animated_animated animate__fadeIn' : ''
 									}
 								>
-									<span className='tagline'>Welcome to my Portfolio</span>
 									<h1>
 										{`Hi i'm Athirson`}
 										<br />
@@ -72,24 +70,19 @@ export const Banner = () => {
 											and i am a {headerText}
 										</span>
 									</h1>
-									<p>
+									<h6 className='banner-presentation' color='#fff'>
 										I love to build things that live on the internet, mainly on
 										the server-side, from RESTful APIs, GraphQL applications,
 										Websocket and Microservices, or anything in between. My goal
 										is to always build products that provide value to other
 										people.
-									</p>
-									<a href='#connect'>
-										<button>
-											Let's connect <ArrowRightCircle size={25} />
-										</button>
-									</a>
+									</h6>
 								</div>
 							)}
 						</TrackVisibility>
 					</Col>
 					<Col xs={12} md={6} xl={5}>
-						<img src={headerImg} alt='Header'></img>
+						<img className='banner-img' src={headerImg} alt='Header'></img>
 					</Col>
 				</Row>
 			</Container>

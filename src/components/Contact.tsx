@@ -2,7 +2,7 @@ import * as EmailValidator from 'email-validator'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import TrackVisibility from 'react-on-screen'
-import contactImg from '../assets/img/contact-img.svg'
+import contactImg from '../assets/img/astronaut-standing.svg'
 
 export const Contact = () => {
 	const formInitialDetails = {
@@ -180,7 +180,7 @@ export const Contact = () => {
 													required
 												></textarea>
 												<br></br>
-												<button type='submit'>
+												<button className='submit-btn' type='submit'>
 													<span>{buttonText}</span>
 												</button>
 											</Col>

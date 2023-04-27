@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-import navIcon1 from '../assets/img/nav-icon1.svg'
-import navIcon2 from '../assets/img/nav-icon2.svg'
-import navIcon3 from '../assets/img/nav-icon3.svg'
 
 export const NavBar = () => {
 	const [activeLink, setActiveLink] = useState('home')
@@ -82,19 +79,8 @@ export const NavBar = () => {
 							</Nav.Link>
 						</Nav>
 						<span className='navbar-text'>
-							<div className='social-icon'>
-								<a href='https://www.linkedin.com/in/athirson-s-a7723a191/'>
-									<img src={navIcon1} alt='' />
-								</a>
-								<a href='https://github.com/AthirsonSilva'>
-									<img src={navIcon2} alt='' />
-								</a>
-								<a href='https://www.instagram.com/athirson.silv4/'>
-									<img src={navIcon3} alt='' />
-								</a>
-							</div>
 							<HashLink to='#connect'>
-								<button className='vvd'>
+								<button className='vvd connect-btn'>
 									<span>Let’s Connect</span>
 								</button>
 							</HashLink>
