@@ -18,7 +18,7 @@ import './styles/skills.css'
 import './styles/technologies.css'
 
 
-const App = () => {
+function App() {
 	return (
 		<div className='App'>
 			<NavBar />
