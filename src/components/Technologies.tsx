@@ -13,10 +13,8 @@ export const Technologies = () => {
 	const [isMobile, setIsMobile] = React.useState<boolean>()
 	const handleResize = () => {
 		if (window.innerWidth <= 768) {
-			console.log('is mobile')
 			setIsMobile(true)
 		} else {
-			console.log('is desktop')
 			setIsMobile(false)
 		}
 	}
