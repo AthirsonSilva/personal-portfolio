@@ -1,4 +1,5 @@
 import { Col } from 'react-bootstrap'
+import noLang from '../assets/img/no-lang.png'
 
 type Props = {
 	name: string
@@ -29,34 +30,16 @@ export const ProjectCard = ({ name, language, description, github }: Props) => {
 				return 'css3'
 
 			default:
-				return language
+				return language ? language : noLang
 		}
 	}
-
-	language = checkLanguage()
-
-	const getLanguageLogo = () => {
-		const devIcons = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`
-
-		const checkDevIcons = new Image()
-		checkDevIcons.src = devIcons
-
-		if (checkDevIcons.height === 0) {
-			const img8 = `https://img.icons8.com/color/48/000000/${language}.png`
-
-			return img8
-		}
-
-		return devIcons
-	}
-
 
 	return (
 		<Col sm={3} md={3}>
 			<div className='proj-imgbx' onClick={() => window.open(github, '_blank')}>
 				<img
 					className='proj-imgbx-mobile'
-					src={getLanguageLogo()}
+					src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${checkLanguage()}/${checkLanguage()}-original.svg`}
 					alt='project'
 				/>
 				<div className='proj-txtx'>

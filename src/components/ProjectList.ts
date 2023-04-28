@@ -34,7 +34,7 @@ export async function getRecentProjects(): Promise<any[]> {
 				repository.description === null
 					? 'No description'
 					: repository.description,
-			language: repository.language === null ? 'markdown' : repository.language,
+			language: repository.language === null ? 'no-lang' : repository.language,
 			html_url:
 				repository.html_url === null
 					? 'https://github.com/AthirsonSilva/'
