@@ -1,7 +1,7 @@
 /************ About Css ************/
 .about {
 	padding: 50px 0 50px 0;
-	background-image: url('/src/assets/img/backgrounds/fondo\ 8.jpeg');
+	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
 	background-position: bottom center;
 	background-size: cover;
 	position: relative;

@@ -9,16 +9,12 @@ export const Projects = () => {
 	const [projects, setProjects] = React.useState<any[]>([])
 
 	React.useEffect(() => {
-		getProjects().then(() => {
-			console.log('Projects loaded')
-		})
+		getProjects()
 	})
 
 	async function getProjects() {
 		const repos = await getRecentProjects()
 		setProjects(repos)
-
-		console.log('repos', repos)
 	}
 
 	return (

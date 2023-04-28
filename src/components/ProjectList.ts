@@ -42,6 +42,5 @@ export async function getRecentProjects(): Promise<any[]> {
 		}
 	})
 
-	console.log('repositories: ', repositories)
 	return repositories
 }
