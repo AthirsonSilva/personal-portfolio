@@ -4,9 +4,9 @@ import TrackVisibility from 'react-on-screen'
 import colorSharp2 from '../assets/img/color-sharp2.png'
 import { TechCard } from './TechCard'
 import {
-	DataScienceTechList,
+	BackendTechList,
 	DevOpsTechList,
-	DevelopmentTechList
+	FrontendTechList
 } from './TechList'
 
 export const Technologies = () => {
@@ -56,12 +56,12 @@ export const Technologies = () => {
 							>
 								<Nav.Item>
 									<Nav.Link className='w-33 tab-linker' eventKey='first'>
-										{isMobile ? 'Dev' : 'Development'}
+										{isMobile ? 'Back' : 'Backend'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
 									<Nav.Link className='w-33 tab-linker' eventKey='second'>
-										{isMobile ? 'DS' : 'Data Science'}
+										{isMobile ? 'Front' : 'Frontend'}
 									</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
@@ -73,21 +73,21 @@ export const Technologies = () => {
 							<Tab.Content className='tech-content'>
 								<Tab.Pane eventKey='first'>
 									<Row>
-										{DevelopmentTechList.map((tech) => {
+										{BackendTechList.map((tech: TechCard) => {
 											return <TechCard {...tech} />
 										})}
 									</Row>
 								</Tab.Pane>
 								<Tab.Pane eventKey='second'>
 									<Row>
-										{DataScienceTechList.map((tech) => {
+										{FrontendTechList.map((tech: TechCard) => {
 											return <TechCard {...tech} />
 										})}
 									</Row>
 								</Tab.Pane>
 								<Tab.Pane eventKey='third'>
 									<Row>
-										{DevOpsTechList.map((tech) => {
+										{DevOpsTechList.map((tech: TechCard) => {
 											return <TechCard {...tech} />
 										})}
 									</Row>

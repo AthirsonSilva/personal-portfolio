@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import Curriculum from '../assets/files/Curriculum.pdf'
 
 export const NavBar = () => {
 	const [activeLink, setActiveLink] = useState('home')
@@ -79,11 +79,9 @@ export const NavBar = () => {
 							</Nav.Link>
 						</Nav>
 						<span className='navbar-text'>
-							<HashLink to='#connect'>
-								<button className='vvd connect-btn'>
-									<span>Let’s Connect</span>
-								</button>
-							</HashLink>
+							<a className='download-cv-btn' href={Curriculum} type='button' download={true}>
+								<span>Download CV</span>
+							</a>
 						</span>
 					</Navbar.Collapse>
 				</Container>

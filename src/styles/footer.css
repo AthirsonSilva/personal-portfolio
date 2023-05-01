@@ -1,7 +1,7 @@
 /************ Footer Css ************/
 .footer {
 	padding: 50px 0 50px 0;
-	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
+	background-image: url('/src/assets/img/backgrounds/bg-horizontal.jpeg');
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -26,35 +26,6 @@
 	letter-spacing: 0.5px;
 	line-height: 1.2em;
 	font-family: 'Centra', sans-serif;
-}
-
-.tech-nav {
-	max-width: 100%;
-	width: 100%;
-}
-
-.tech-card-img {
-	width: 40%;
-	height: 40%;
-	object-fit: cover;
-	margin-right: 5%;
-}
-
-.tech-imgbx {
-	height: auto
-}
-
-.tech-content {
-	margin-left: 4%;
-}
-
-.tech-txtx {
-	margin-left: 10%;
-}
-
-.tech-col {
-	margin-top: 2.5%;
-	margin-bottom: 2.5%;
 }
 
 .hidden {

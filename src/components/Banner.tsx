@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { ArrowRightCircle } from 'react-bootstrap-icons'
 import TrackVisibility from 'react-on-screen'
 import headerImg from '../assets/img/astronaut-computer.svg'
 
@@ -70,13 +71,18 @@ export const Banner = () => {
 											and i am a {headerText}
 										</span>
 									</h1>
-									<h6 className='banner-presentation' color='#fff'>
+									<h4 className='banner-presentation' color='#fff'>
 										I love to build things that live on the internet, mainly on
 										the server-side, from RESTful APIs, GraphQL applications,
 										Websocket and Microservices, or anything in between. My goal
 										is to always build products that provide value to other
 										people.
-									</h6>
+									</h4>
+									<a href='#connect'>
+										<button className='connect-btn'>
+											Let's connect <ArrowRightCircle size={42} />
+										</button>
+									</a>
 								</div>
 							)}
 						</TrackVisibility>

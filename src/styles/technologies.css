@@ -2,7 +2,30 @@
 .technologies {
 	padding: 25px 0 150px 0;
 	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
-	background-position: bottom center;
-	background-size: cover;
+	background-position: center;
+	background-position: cover;
 	position: relative;
+}
+
+.tech-nav {
+	max-width: 100%;
+	width: 100%;
+}
+
+.tech-card-img {
+	width: 60%;
+	height: 60%;
+	object-fit: fill;
+	margin: 7.5% auto auto 20%;
+}
+
+.tech-imgbx {
+	height: 100%;
+}
+
+.tech-imgbx h5 {
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	margin: 10% auto auto auto;
 }

@@ -1,7 +1,9 @@
 /************ Contact Css ************/
 .contact {
 	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
-	padding: 60px 0 40px 0;
+	background-position: center;
+	background-position: cover;
+	padding: 15px 0;
 }
 
 .contact img {

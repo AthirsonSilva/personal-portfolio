@@ -20,9 +20,10 @@ nav.navbar a.navbar-brand {
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
-	font-weight: 400;
+	font-weight: 600;
 	color: #fff !important;
-	letter-spacing: 0.6px;
+	letter-spacing: 0.8px;
+	font-style: italic;
 	padding: 0 15px;
 	font-size: 18px;
 	opacity: 0.75;
@@ -41,7 +42,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link::before {
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-	opacity: 1;
+	opacity: 2;
 	transition: 0.25s ease-in-out;
 }
 
@@ -51,7 +52,7 @@ span.navbar-text {
 }
 
 
-.navbar-text button {
+.navbar-text .download-cv-btn {
 	font-weight: 700;
 	color: #fff;
 	border: 1px solid #fff;
@@ -64,11 +65,12 @@ span.navbar-text {
 	transition: 0.3s ease-in-out;
 }
 
-.navbar-text button span {
+.navbar-text .download-cv-btn span {
 	z-index: 1;
 }
 
-.navbar-text button::before {
+.navbar-text .download-cv-btn::before {
+	color: #fff;
 	content: "";
 	width: 0%;
 	height: 100%;
@@ -81,15 +83,24 @@ span.navbar-text {
 	transition: 0.3s ease-in-out;
 }
 
-.navbar-text button:hover {
+.navbar-text .download-cv-btn:hover {
 	color: #121212;
 }
 
-.navbar-text button:hover::before {
+.navbar-text .download-cv-btn:hover::before {
 	content: "";
+	color: #fff;
 	width: 100%;
 	height: 100%;
 	position: absolute;
+}
+
+.navbar-text .download-cv-btn span {
+	color: #f7f7f7;
+}
+
+.navbar-text .download-cv-btn:hover span {
+	color: #121212;
 }
 
 nav.navbar .navbar-toggler:active,

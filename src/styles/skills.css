@@ -1,9 +1,8 @@
 /************ Skills Css ************/
 .skill {
 	padding: 0 0 50px 0;
-	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
-	background-position: bottom center;
-	background-size: cover;
+	background-image: url('/src/assets/img/backgrounds/bg-horizontal.jpeg');
+	background-position: cover;
 	position: relative;
 }
 

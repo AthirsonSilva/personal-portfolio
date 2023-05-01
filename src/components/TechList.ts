@@ -1,147 +1,162 @@
 const icons8Template = 'https://img.icons8.com/color/48/000000/'
 const devIconTemplate = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'
 
-export const DevelopmentTechList = [
-	{
-		name: 'HTML',
-		logo: `${icons8Template}html-5.svg`
-	},
-	{
-		name: 'CSS',
-		logo: `${icons8Template}css3.svg`
-	},
-	{
-		name: 'JavaScript',
-		logo: `${icons8Template}javascript.svg`
-	},
-	{
-		name: 'TypeScript',
-		logo: `${icons8Template}typescript.svg`
-	},
-	{
-		name: 'React',
-		logo: `${icons8Template}react-native.svg`
-	},
-	{
-		name: 'Bootstrap',
-		logo: `${icons8Template}bootstrap.svg`
-	},
+type Tech = {
+	name: string
+	logo: string
+}
+
+type Style = 'original' | 'plain' | 'wordmark'
+
+const sanitizeLanguageName = (language: string) => {
+	const sanitizedLanguage = language.replace(/\+/g, '')
+
+	console.log({
+		language,
+		sanitizedLanguage,
+	})
+
+	return sanitizedLanguage
+}
+
+const toIcons8Template = (tech: string, doSanitize: boolean = false) => {
+	let techName = ''
+
+	if (doSanitize) {
+		techName = sanitizeLanguageName(tech)
+	}
+
+	return `${icons8Template}${doSanitize ? techName : tech}.svg`
+}
+
+const toDevIconTemplate = (tech: string, style: Style = 'original', doSanitize: boolean = false) => {
+	let techName = ''
+
+	if (doSanitize) {
+		techName = sanitizeLanguageName(tech)
+	}
+
+	if (style === 'plain')
+		return `${devIconTemplate}${doSanitize ? techName : tech
+			}/${tech}-plain.svg`
+
+	else if (style === 'wordmark')
+		return `${devIconTemplate}${doSanitize ? techName : tech
+			}/${tech}-plain-wordmark.svg`
+
+	return `${devIconTemplate}${doSanitize ? techName : tech
+		}/${tech}-original.svg`
+}
+
+export const BackendTechList: Array<Tech> = [
 	{
 		name: 'Node.js',
-		logo: `${icons8Template}nodejs.svg`
+		logo: toDevIconTemplate('nodejs')
 	},
 	{
 		name: 'Express.js',
-		logo: `${icons8Template}express.svg`
+		logo: toIcons8Template('express')
 	},
 	{
 		name: 'NestJS',
-		logo: `${icons8Template}nestjs.svg`
+		logo: toIcons8Template('nestjs')
 	},
 	{
 		name: 'PHP',
-		logo: `${devIconTemplate}php/php-original.svg`
+		logo: toDevIconTemplate('php', 'plain')
 	},
 	{
 		name: 'Laravel',
-		logo: `${devIconTemplate}laravel/laravel-plain-wordmark.svg`
+		logo: toDevIconTemplate('laravel', 'plain')
 	},
 	{
 		name: 'Java',
-		logo: `${icons8Template}java-coffee-cup-logo.svg`
+		logo: toDevIconTemplate('java')
 	},
 	{
 		name: 'Spring',
-		logo: `${devIconTemplate}spring/spring-original.svg`
+		logo: toDevIconTemplate('spring')
 	},
 	{
 		name: 'Python',
-		logo: `${icons8Template}python.svg`
+		logo: toDevIconTemplate('python')
 	},
 	{
 		name: 'FastAPI',
-		logo: `${devIconTemplate}fastapi/fastapi-original.svg`
+		logo: toDevIconTemplate('fastapi')
 	}
 ]
 
-export const DataScienceTechList = [
+export const FrontendTechList: Array<Tech> = [
 	{
-		name: 'Python',
-		logo: `${icons8Template}python.svg`
+		name: 'HTML',
+		logo: toDevIconTemplate('html5')
 	},
 	{
-		name: 'Jupyter',
-		logo: `${devIconTemplate}jupyter/jupyter-original-wordmark.svg`
+		name: 'CSS',
+		logo: toDevIconTemplate('css3')
 	},
 	{
-		name: 'SQL',
-		logo: `${icons8Template}sql.svg`
+		name: 'JavaScript',
+		logo: toDevIconTemplate('javascript')
 	},
 	{
-		name: 'NumPy',
-		logo: `${icons8Template}numpy.svg`
+		name: 'TypeScript',
+		logo: toDevIconTemplate('typescript')
 	},
 	{
-		name: 'Pandas',
-		logo: `${icons8Template}pandas.svg`
+		name: 'React',
+		logo: toDevIconTemplate('react')
 	},
 	{
-		name: 'Matplotlib',
-		logo: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg'
+		name: 'Bootstrap',
+		logo: toDevIconTemplate('bootstrap')
 	},
-	{
-		name: 'Seaborn',
-		logo: 'https://seeklogo.com/images/S/seaborn-logo-244EB2DEC5-seeklogo.com.png'
-	}
 ]
 
 export const DevOpsTechList = [
 	{
 		name: 'Git',
-		logo: `${icons8Template}git.svg`
+		logo: toDevIconTemplate('git')
 	},
 	{
 		name: 'GitHub',
-		logo: `${icons8Template}github.svg`
+		logo: toDevIconTemplate('github')
 	},
 	{
 		name: 'Docker',
-		logo: `${icons8Template}docker.svg`
+		logo: toIcons8Template('docker')
 	},
 	{
 		name: 'AWS',
-		logo: `${devIconTemplate}amazonwebservices/amazonwebservices-plain-wordmark.svg`
+		logo: toDevIconTemplate('amazonwebservices', 'wordmark')
 	},
 	{
 		name: 'Linux',
-		logo: `${icons8Template}linux.svg`
+		logo: toIcons8Template('linux')
 	},
 	{
 		name: 'Bash',
-		logo: `${devIconTemplate}bash/bash-original.svg`
+		logo: toDevIconTemplate('bash')
 	},
 	{
 		name: 'MySQL',
-		logo: `${icons8Template}mysql-logo.svg`
+		logo: toDevIconTemplate('mysql', 'wordmark')
 	},
 	{
 		name: 'postgres',
-		logo: `${devIconTemplate}postgresql/postgresql-original.svg`
+		logo: toDevIconTemplate('postgresql')
 	},
 	{
 		name: 'SQLite',
-		logo: `${devIconTemplate}sqlite/sqlite-original.svg`
+		logo: toDevIconTemplate('sqlite')
 	},
 	{
 		name: 'SQL Server',
-		logo: `${icons8Template}microsoft-sql-server.svg`
+		logo: toIcons8Template('microsoft-sql-server')
 	},
 	{
 		name: 'MongoDB',
-		logo: `${icons8Template}mongodb.svg`
-	},
-	{
-		name: 'Heroku',
-		logo: `${icons8Template}heroku.svg`
+		logo: toDevIconTemplate('mongodb')
 	}
 ]

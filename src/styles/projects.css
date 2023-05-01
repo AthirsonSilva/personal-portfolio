@@ -1,8 +1,10 @@
 /************ Projects Css ************/
 .project {
-	padding: 80px 0;
+	padding: 20px 0;
 	position: relative;
 	background-image: url('/src/assets/img/backgrounds/bg.jpeg');
+	background-position: center;
+	background-position: cover;
 	background-color: black;
 }
 
