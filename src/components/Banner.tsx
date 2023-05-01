@@ -71,16 +71,16 @@ export const Banner = () => {
 											and i am a {headerText}
 										</span>
 									</h1>
-									<h4 className='banner-presentation' color='#fff'>
-										I love to build things that live on the internet, mainly on
+									<h6 className='banner-presentation' color='#fff'>
+										"I love to build things that live on the internet, mainly on
 										the server-side, from RESTful APIs, GraphQL applications,
 										Websocket and Microservices, or anything in between. My goal
 										is to always build products that provide value to other
-										people.
-									</h4>
+										people."
+									</h6>
 									<a href='#connect'>
 										<button className='connect-btn'>
-											Let's connect <ArrowRightCircle size={42} />
+											Let's connect <ArrowRightCircle size={28} />
 										</button>
 									</a>
 								</div>
