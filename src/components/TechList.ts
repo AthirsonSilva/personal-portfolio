@@ -112,6 +112,10 @@ export const FrontendTechList: Array<Tech> = [
 		name: 'Bootstrap',
 		logo: toDevIconTemplate('bootstrap')
 	},
+	{
+		name: 'Tailwind CSS',
+		logo: toDevIconTemplate('tailwindcss', 'plain')
+	}
 ]
 
 export const DevOpsTechList = [

@@ -9,7 +9,7 @@
 }
 
 .project h2 {
-	font-size: 45px;
+	font-size: 4vh;
 	font-weight: 700;
 	text-align: center;
 }
@@ -130,7 +130,7 @@
 .proj-txtx {
 	position: absolute;
 	text-align: center;
-	top: 65%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	transition: 0.5s ease-in-out;
@@ -138,7 +138,7 @@
 }
 
 .proj-imgbx:hover .proj-txtx {
-	top: 50%;
+	top: 45%;
 }
 
 .proj-txtx h4 {
