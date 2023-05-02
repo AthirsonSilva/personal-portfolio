@@ -10,7 +10,7 @@ export const Banner = () => {
 	const [headerText, setHeaderText] = React.useState('')
 	const period = 1500
 	const [delta, setDelta] = React.useState(100 - Math.random() * 44)
-	const toRotate = ['Backend Developer', 'Linux Enthusiast', 'Fullstack Developer']
+	const toRotate = ['Backend Developer', 'Linux Enthusiast', 'Open Source Lover']
 
 	React.useEffect(() => {
 		let ticker = setInterval(() => {
@@ -62,13 +62,19 @@ export const Banner = () => {
 										<br />
 										<span
 											style={{
-												fontSize: '2.5rem',
-												fontStyle: 'italic',
+												fontSize: '20pt',
 												fontWeight: 'normal'
 											}}
 											className='wrap'
 										>
-											and i am a {headerText}
+											and i am a <span style={{
+												fontStyle: 'italic',
+												fontSize: '24pt'
+											}}>
+												<b>
+													{headerText}
+												</b>
+											</span>
 										</span>
 									</h1>
 									<h6 className='banner-presentation' color='#fff'>
