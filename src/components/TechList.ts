@@ -1,4 +1,4 @@
-const icons8Template = 'https://img.icons8.com/color/48/000000/'
+const icons8Template = 'https://img.icons8.com/color/color/480w/'
 const devIconTemplate = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'
 
 type Tech = {
@@ -26,7 +26,7 @@ const toIcons8Template = (tech: string, doSanitize: boolean = false) => {
 		techName = sanitizeLanguageName(tech)
 	}
 
-	return `${icons8Template}${doSanitize ? techName : tech}.svg`
+	return `${icons8Template}${doSanitize ? techName : tech}.png`
 }
 
 const toDevIconTemplate = (tech: string, style: Style = 'original', doSanitize: boolean = false) => {
@@ -54,12 +54,8 @@ export const BackendTechList: Array<Tech> = [
 		logo: toDevIconTemplate('nodejs')
 	},
 	{
-		name: 'Express.js',
-		logo: toIcons8Template('express')
-	},
-	{
 		name: 'NestJS',
-		logo: toIcons8Template('nestjs')
+		logo: toDevIconTemplate('nestjs', 'plain')
 	},
 	{
 		name: 'PHP',
@@ -129,7 +125,7 @@ export const DevOpsTechList = [
 	},
 	{
 		name: 'Docker',
-		logo: toIcons8Template('docker')
+		logo: toDevIconTemplate('docker', 'plain')
 	},
 	{
 		name: 'AWS',
@@ -137,7 +133,7 @@ export const DevOpsTechList = [
 	},
 	{
 		name: 'Linux',
-		logo: toIcons8Template('linux')
+		logo: toDevIconTemplate('linux')
 	},
 	{
 		name: 'Bash',
@@ -157,7 +153,7 @@ export const DevOpsTechList = [
 	},
 	{
 		name: 'SQL Server',
-		logo: toIcons8Template('microsoft-sql-server')
+		logo: 'https://user-images.githubusercontent.com/4249331/52232852-e2c4f780-28bd-11e9-835d-1e3cf3e43888.png'
 	},
 	{
 		name: 'MongoDB',

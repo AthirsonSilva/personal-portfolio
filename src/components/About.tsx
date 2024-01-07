@@ -40,7 +40,7 @@ export const About = () => {
 													about='_blank'
 													href='https://www.linkedin.com/in/athirson-s-a7723a191/'
 												>
-													<img src={navIcon1} alt='' />
+						 							<img src={navIcon1} alt='' />
 												</a>
 												<a
 													about='_blank'

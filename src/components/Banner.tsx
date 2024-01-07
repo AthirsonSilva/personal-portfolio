@@ -10,7 +10,7 @@ export const Banner = () => {
 	const [headerText, setHeaderText] = React.useState('')
 	const period = 1500
 	const [delta, setDelta] = React.useState(100 - Math.random() * 44)
-	const toRotate = ['Backend Developer', 'Linux Enthusiast', 'Open Source Lover']
+	const toRotate = ['Backend Developer', 'Linux Enthusiast', 'Open Source advocate']
 
 	React.useEffect(() => {
 		let ticker = setInterval(() => {
